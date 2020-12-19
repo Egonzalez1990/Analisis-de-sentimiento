@@ -82,7 +82,7 @@ Bdtweet %>% mutate(diatw = format(created_at, "%m-%d")) %>% group_by(diatw) %>% 
 set.seed(100)
 Bdtweet <- Bdtweet %>% mutate(diatw = format(created_at, "%m-%d")) %>% group_by(diatw) %>%  sample_n(100)
 
-## Limpiea de Texto
+## Limpieza de Texto
 Bdtweet$cleantext <- gsub("^[[:space:]]*","",Bdtweet$text) # Remove leading whitespaces
 Bdtweet$cleantext <- gsub("[[:space:]]*$","",Bdtweet$cleantext) # Remove trailing whitespaces
 Bdtweet$cleantext <- gsub(" +"," ",Bdtweet$cleantext) #Remove extra whitespaces
